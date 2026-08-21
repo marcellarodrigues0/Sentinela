@@ -47,7 +47,7 @@
 
 function login() {
 
-  fetch("http://localhost:3000/login", {
+  fetch("/login", {
 
     method: "POST",
 
@@ -69,19 +69,13 @@ function login() {
 
   .then(data => {
 
-    if (data.tipo === "triagem") {
-      location.href = "triagem.html";
-    }
+    if (data.tipo === "triagem") location.href = "triagem.html";
 
-    if (data.tipo === "medico") {
-      location.href = "medico.html";
-    }
+    if (data.tipo === "medico") location.href = "medico.html";
 
-    if (data.tipo === "atendimento") {
-      location.href = "atendimento.html";
-    }
+    if (data.tipo === "atendimento") location.href = "atendimento.html";
 
-  })
+  });
 
   .catch(error => {
 
